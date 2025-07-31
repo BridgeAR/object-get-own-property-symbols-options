@@ -133,12 +133,21 @@ A canonical polyfill (above) demonstrates feasibility; prototypes in V8 & Spider
 
 ## Ecosystem Impact
 
-Libraries such as **lodash**, **ramda**, **Fastify**, and **Babel** today implement their own filtering helpers for symbol enumerability.  Native support will simplify their code and yield performance gains.
+Libraries such as **lodash**, **Angular**, **React**, **Node.js**, **Next.js**, **TypeScript**, and many more implement filtering for symbol enumerability today. Native support will simplify their code and yield performance gains.
+
+### React (filters for only enumerable symbols)
+
+https://github.com/facebook/react/blob/336614679600af371b06371c0fbdd31fd9838231/packages/react-devtools-shared/src/utils.js#L109-L119
+
+### Node.js (filters for only enumerable symbols)
+
+- console.log() / util.inspect()
+- assert.deepStrictEqual()
 
 ## Remaining Open Questions
 
 1. Should `enumerable: "all"` be permitted explicitly, or treated as default only?
-2. Should we expose additional filters (e.g., configurable, writable) in the same options object?  – Out of scope for MVP.
+2. Should we expose additional filters (e.g., configurable, writable) in the same options object? – Out of scope for MVP.
 
 ## References & Prior Work
 
